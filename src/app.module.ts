@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
-import { AppService } from './app.service';
+import { MongooseModule } from '@nestjs/mongoose';
 import { TaskModule } from './task/task.module';
 
 @Module({
-  imports: [TaskModule],
+  imports: [MongooseModule.forRoot('mongodb://localhost/taskdb'), TaskModule],
 })
 export class AppModule {}
